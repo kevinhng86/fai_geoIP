@@ -55,7 +55,7 @@ if( isset($ip) ){
 
 }
 
-/* Unset this two arrays the script need to continue without them.
+/* Unset this two arrays when the script need to continue without them. Iprange array cost close to 200MB while in memory.
 * $iprange = null;
 * $dbsize = null;
 */
