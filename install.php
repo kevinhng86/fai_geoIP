@@ -41,9 +41,9 @@ function MaxIpCSVToDB($file, $dbLib){
     $query = "LOAD DATA LOCAL INFILE '$tempfile' INTO TABLE " . IP_TABLE . "\n fields terminated by ',' \n" . $field;
     //$grantquery = "GRANT FILE ON *.* TO '" . DB_USERNAME . "'@'" . DB_HOST ."' ;";
     //$revokequery = "REVOKE FILE ON *.* FROM '" . DB_USERNAME . "'@'" . DB_HOST . "' ;";
-    $conn_i = $GLOBALS[DB_CON_G_N];
+    //$conn_i->query($grantquery);
     $result = $conn_i->query($query);
-    $conn_i->query($revokequery);
+    //$conn_i->query($revokequery);
     unlink($tempfile);
     if(!$result) return false;
     return true;
