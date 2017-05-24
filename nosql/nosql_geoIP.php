@@ -51,8 +51,6 @@ if( isset($ip) ){
 } else {
 	header('Content-Type: application/json');
 	echo json_encode("No IP address input");
-	echo memory_get_usage ();
-
 }
 
 /* Unset this two arrays when the script need to continue without them. Iprange array cost close to 200MB while in memory.
