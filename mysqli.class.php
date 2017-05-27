@@ -196,9 +196,9 @@ class dbLib
         $conn_i = $GLOBALS[$this->conGlobal];
         $C = 'constant';
         $field = COUNTRY_FIELD_ISO;
-        if($type === "name") $field = COUNTRY_FIELD_ISO;
-        if($type === "conname") $field = COUNTRY_FIELD_CON_NAME;
-        if($type === "concode") $field = COUNTRY_FIELD_CON_CODE;
+        if($type === "iso") $field = COUNTRY_FIELD_ISO;
+        if($type === "name") $field = COUNTRY_FIELD_CON_NAME;
+        if($type === "code") $field = COUNTRY_FIELD_CON_CODE;
         if($type === "*") $field = "*";
         $query = "SELECT $field FROM {$C('COUNTRY_TABLE')} WHERE {$C('COUNTRY_FIELD_CODE')} = '" . $conn_i->real_escape_string($ccode) . "' LIMIT 1;";
         if( ($output = $conn_i->query($query)) === false ) return false;
